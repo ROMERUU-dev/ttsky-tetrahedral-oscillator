@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  title:        "Tetrahedral Oscillator"      # Project title
+  author:       "UABC, Juvenal Romero"      # Your name
+  discord:      "ROMERUU-dev"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Tetrahedral oscillator based on coupled CMOS inverter pairs with capacitive load tuning."      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -15,7 +15,7 @@ project:
   uses_3v3: false       # Set to true if your project uses 3.3V (VAPWR) in addition to 1.8V (VDPWR)
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_tetrahedral_oscillator"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
