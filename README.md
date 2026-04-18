@@ -16,7 +16,9 @@ The implementation includes schematic-level design files, Magic layout collatera
 The design is motivated by the paper **“Analysis and Design of a Tetrahedral Oscillator”** by **Richelle L. Smith** and **Thomas H. Lee**. The oscillator concept is adapted here as an educational and experimental SKY130 layout exercise, with emphasis on physical implementation, parasitic-aware simulation, and observation of internal oscillator behavior.
 
 <p align="center">
-  <img src="docs/images/osc.png" alt="Theoretical tetrahedral oscillator schematic from the original paper" width="620">
+  <img src="docs/images/osc.png" alt="Theoretical tetrahedral oscillator schematic from the original paper" width="420">
+  <br>
+  <em>Conceptual tetrahedral oscillator schematic adapted from the reference paper.</em>
 </p>
 
 The project was developed in the context of a final project for the Digital Electronics course at the Faculty of Engineering Mexicali, Universidad Autonoma de Baja California (UABC), within the Semiconductors and Microelectronics program.
