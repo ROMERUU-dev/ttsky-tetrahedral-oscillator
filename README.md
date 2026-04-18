@@ -5,6 +5,15 @@
 
 A compact SKY130 oscillator implemented as a semi-custom Tiny Tapeout analog layout using SKY130 standard cells, focused on the study of tetrahedral-style feedback, coupled CMOS inverter pairs, capacitive loading, and post-layout verification.
 
+## Project Team
+
+| Role | Name |
+| --- | --- |
+| Primary author | Juvenal Romero Pedraza |
+| Coauthor | Gael Gabino Diaz Ojeda |
+| Coauthor | Mario Ranferi Romero Salgado |
+| Project coordinator | Dr. Jose Luis Valtierra Sanchez de la Vega |
+
 ## Overview
 
 This repository contains the design collateral for a compact tetrahedral oscillator targeting the Tiny Tapeout SKY130 analog/custom layout flow. The project explores a non-conventional oscillator topology based on coupled CMOS inverter pairs rather than a standard odd-stage ring oscillator, using a semi-custom implementation style based on SKY130 standard cells.
@@ -45,7 +54,9 @@ This project is not intended to claim a direct reproduction of the published cir
 | Implementation style | Semi-custom layout using SKY130 standard cells |
 | Supply | 1.8 V core supply |
 | Clock | `0 Hz` |
-| Author | Juvenal Romero Pedraza |
+| Primary author | Juvenal Romero Pedraza |
+| Coauthors | Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado |
+| Project coordinator | Dr. Jose Luis Valtierra Sanchez de la Vega |
 
 ## Design Concept
 
@@ -70,15 +81,15 @@ The project was developed through a custom-layout oriented workflow:
 - [GDS layout viewer](https://romeruu-dev.github.io/ttsky-tetrahedral-oscillator/)
 - [Xschem schematic viewer](https://xschem-viewer.com/?file=https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/blob/main/xschem/tt_um_tetrahedral_oscilator_xschem_lvs.sch)
 
-## Verification Flow
+## Review and Reproducibility Notes
 
-The intended verification flow is:
+The repository is organized to make the design reviewable and reproducible, but this section should be read as a practical review checklist rather than a formal sign-off flow:
 
-- Review the schematic through the online Xschem viewer.
-- Inspect the final physical design through the online GDS layout viewer.
-- Run or review the transient SPICE testbenches in `tb/`.
-- Review generated simulation outputs in `runs/results/`.
-- Compare the internal oscillator core nodes against the buffered output nodes.
+- The online Xschem viewer provides a quick way to inspect the schematic-level design.
+- The online GDS viewer provides a browser-based view of the exported physical layout.
+- The SPICE testbenches in `tb/` document the local transient simulation setup used during development.
+- Generated simulation collateral in `runs/results/` records the waveform data and plots used for README-level discussion.
+- The most useful comparison is between the internal oscillator core nodes and the buffered observation outputs, since the buffer chain changes how the oscillation is observed externally.
 
 ## Simulation Results
 
@@ -156,9 +167,12 @@ This README does not claim silicon measurement results, final manufactured behav
 - The design is documented as a reproducible university microelectronics project using open-source SKY130 tooling.
 - The physical implementation is better understood as analog/mixed-signal feedback layout rather than ordinary digital RTL.
 
-## Author
+## Project Team
 
-Juvenal Romero Pedraza
+- Juvenal Romero Pedraza, primary author
+- Gael Gabino Diaz Ojeda, coauthor
+- Mario Ranferi Romero Salgado, coauthor
+- Dr. Jose Luis Valtierra Sanchez de la Vega, project coordinator
 
 ## Acknowledgment
 
