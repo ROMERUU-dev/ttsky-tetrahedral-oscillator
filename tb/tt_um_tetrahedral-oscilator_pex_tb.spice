@@ -1,0 +1,56 @@
+* PEX transient testbench for tt_um_tetrahedral_oscillator.
+* External node names avoid [] so ngspice expressions stay simple.
+.lib /home/romeruu/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+.include ../spice/tt_um_tetrahedral_oscillator_pex.spice
+
+.global VSUBS
+Vvdpwr VDPWR 0 1.8
+Vvgnd VGND 0 0
+Vsubs VSUBS 0 0
+
+Xdut clk ena rst_n ua0 ua1 ua2 ua3 ua4 ua5 ua6 ua7
++ ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7
++ uio_in0 uio_in1 uio_in2 uio_in3 uio_in4 uio_in5 uio_in6 uio_in7
++ uo_out_0 uo_out_1 uo_out_2 uo_out_3 VDPWR VGND tt_um_tetrahedral_oscillator
+
+Rclk clk VGND 1G
+Rena ena VGND 1G
+Rrst rst_n VGND 1G
+Rua0 ua0 VGND 1G
+Rua1 ua1 VGND 1G
+Rua2 ua2 VGND 1G
+Rua3 ua3 VGND 1G
+Rua4 ua4 VGND 1G
+Rua5 ua5 VGND 1G
+Rua6 ua6 VGND 1G
+Rua7 ua7 VGND 1G
+Rui0 ui0 VGND 1G
+Rui1 ui1 VGND 1G
+Rui2 ui2 VGND 1G
+Rui3 ui3 VGND 1G
+Rui4 ui4 VGND 1G
+Rui5 ui5 VGND 1G
+Rui6 ui6 VGND 1G
+Rui7 ui7 VGND 1G
+Ruio0 uio_in0 VGND 1G
+Ruio1 uio_in1 VGND 1G
+Ruio2 uio_in2 VGND 1G
+Ruio3 uio_in3 VGND 1G
+Ruio4 uio_in4 VGND 1G
+Ruio5 uio_in5 VGND 1G
+Ruio6 uio_in6 VGND 1G
+Ruio7 uio_in7 VGND 1G
+
+.save v(uo_out_0) v(uo_out_1) v(uo_out_2) v(uo_out_3)
+.save v(xdut.oscilador_base_0/x9/Y) v(xdut.oscilador_base_0/x9/A)
+.save v(xdut.oscilador_base_0/x4/A) v(xdut.oscilador_base_0/x8/A)
+
+.tran 1n 500n
+.control
+shell mkdir -p runs/results
+run
+wrdata runs/results/pex_uo_out.dat v(uo_out_0) v(uo_out_1) v(uo_out_2) v(uo_out_3)
+write runs/results/pex_uo_out.raw v(uo_out_0) v(uo_out_1) v(uo_out_2) v(uo_out_3)
+quit
+.endc
+.end
