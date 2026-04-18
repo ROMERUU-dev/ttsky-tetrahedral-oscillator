@@ -1,3 +1,6 @@
+[![gds](https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/actions/workflows/gds.yaml/badge.svg)](https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/actions/workflows/gds.yaml)
+[![docs](https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/actions/workflows/docs.yaml/badge.svg)](https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/actions/workflows/docs.yaml)
+
 # Tetrahedral Oscillator for Tiny Tapeout
 
 This project implements a compact SKY130 tetrahedral oscillator for the Tiny Tapeout analog flow.
