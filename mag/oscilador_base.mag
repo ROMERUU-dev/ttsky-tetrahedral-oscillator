@@ -4066,10 +4066,6 @@ use osc_nucleo_temp  osc_nucleo_temp_0
 timestamp 1776063115
 transform 1 0 2135 0 1 5200
 box -3150 8400 14950 16869
-use pincelazo  pincelazo_0
-timestamp 1776480128
-transform 1 0 17905 0 1 17730
-box 0 0 7200 3600
 use semilogo  semilogo_0
 timestamp 1776466751
 transform 1 0 -12 0 1 -19718
