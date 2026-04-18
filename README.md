@@ -46,19 +46,46 @@ Simulate the extracted design with the provided SPICE testbenches and inspect th
 - Run or review the post-layout ngspice testbenches in `tb/` and `runs/results/`.
 - Compare the oscillator core waveforms against the buffered output waveforms.
 
+## Simulation Results
+
+The oscillator was checked at two observation points: directly at the internal core nodes and after the output buffer chain. The core view shows the coupled inverter-pair dynamics, while the buffered view shows the same oscillation after it has been isolated for external observation.
+
+### Oscillator Core
+
+![Oscillator core waveforms](docs/images/oscillator_core_waveforms_overlay_zoom.svg)
+
+The internal nodes (`x9/Y`, `x4/A`, `x9/A`, and `x8/A`) oscillate with the phase relationships expected from the tetrahedral-style feedback network. These are the most useful waveforms for understanding the behavior of the oscillator itself, before the buffer stages reshape and isolate the signals.
+
+### Buffered Outputs
+
+![Buffered output waveforms](docs/images/buffered_output_waveforms_overlay_zoom.svg)
+
+The buffered outputs preserve the oscillatory behavior while providing cleaner observation nodes. These signals are useful for integration and probing, but the core waveforms remain the better reference for studying the oscillator topology.
+
+## Layout Preview
+
+![Layout preview](docs/images/layout.svg)
+
+The final layout is exported as GDS/LEF and can be inspected interactively with the online GDS layout viewer. The layout collateral is kept in `gds/`, `lef/`, and `mag/`.
+
+## Tooling
+
+![SkyFlow logo](docs/images/sky130-flow-gui.svg)
+![PNG-2-Layout logo](docs/images/pxl.svg)
+
+SkyFlow was used as the local workflow environment for simulation and layout support. PNG-2-Layout is kept as supporting tooling for converting image-based artwork into layout-friendly geometry.
+
+## Conclusions
+
+The simulation results show that the coupled inverter network can sustain oscillation and that the buffered outputs track the oscillator activity without being the primary source of the behavior. This supports the custom-layout approach: the oscillator is best treated as an analog/mixed-signal feedback structure rather than as a conventional RTL block.
+
 ## Layout Strategy
 
 The oscillator core is implemented as custom physical layout using SKY130 standard cells placed manually in Magic. Because the circuit contains multiple active drivers around internal feedback nodes, this custom layout approach is more suitable than treating the block as a conventional digital RTL-to-GDS design.
 
 ## Images
 
-Image assets for documentation live in [`docs/images/`](docs/images/). Planned images:
-
-- SkyFlow logo
-- PNG-2-Layout logo
-- Oscillator core waveforms
-- Buffered output waveforms
-- SVG layout image
+Image assets for documentation live in [`docs/images/`](docs/images/).
 
 ## Repository Structure
 
