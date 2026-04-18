@@ -5,16 +5,6 @@
 
 A compact SKY130 oscillator implemented as a semi-custom Tiny Tapeout analog layout using SKY130 standard cells, focused on the study of tetrahedral-style feedback, coupled CMOS inverter pairs, capacitive loading, and post-layout verification.
 
-## Project Team
-
-Project participants:
-
-- Juvenal Romero Pedraza
-- Gael Gabino Diaz Ojeda
-- Mario Ranferi Romero Salgado
-
-Project coordinator: Dr. Jose Luis Valtierra Sanchez de la Vega
-
 ## Overview
 
 This repository contains the design collateral for a compact tetrahedral oscillator targeting the Tiny Tapeout SKY130 analog/custom layout flow. The project explores a non-conventional oscillator topology based on coupled CMOS inverter pairs rather than a standard odd-stage ring oscillator, using a semi-custom implementation style based on SKY130 standard cells.
