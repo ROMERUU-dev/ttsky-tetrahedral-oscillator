@@ -70,10 +70,17 @@ The final layout is exported as GDS/LEF and can be inspected interactively with 
 
 ## Tooling
 
-![SkyFlow logo](docs/images/sky130-flow-gui.svg)
-![PNG-2-Layout logo](docs/images/pxl.svg)
+<p>
+  <img src="docs/images/sky130-flow-gui.svg" alt="SkyFlow logo" width="120">
+  <img src="docs/images/pxl.svg" alt="PNG-2-Layout logo" width="120">
+</p>
 
-SkyFlow was used as the local workflow environment for simulation and layout support. PNG-2-Layout is kept as supporting tooling for converting image-based artwork into layout-friendly geometry.
+This project also uses custom support software developed to make the analog layout workflow easier:
+
+- [SkyFlow / sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui): local GUI workflow for organizing SKY130 projects, running simulations, managing generated results, and keeping layout/simulation work in one place.
+- [PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout): utility for converting transparent PNG artwork into layout-friendly geometry that can be cleaned up and integrated into the physical design flow.
+
+SkyFlow was used to support simulation and project organization while iterating on the oscillator. PNG-2-Layout is used as supporting tooling for image-to-layout experiments and visual layout assets around the project.
 
 ## Conclusions
 
