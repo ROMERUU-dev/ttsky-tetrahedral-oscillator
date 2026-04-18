@@ -8,22 +8,13 @@ Vvdpwr VDPWR 0 1.8
 Vvgnd VGND 0 0
 Vsubs VSUBS 0 0
 
-Xdut clk ena rst_n ua0 ua1 ua2 ua3 ua4 ua5 ua6 ua7
-+ ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7
+Xdut clk ena rst_n ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7
 + uio_in0 uio_in1 uio_in2 uio_in3 uio_in4 uio_in5 uio_in6 uio_in7
 + uo_out_0 uo_out_1 uo_out_2 uo_out_3 VDPWR VGND tt_um_tetrahedral_oscillator
 
 Rclk clk VGND 1G
 Rena ena VGND 1G
 Rrst rst_n VGND 1G
-Rua0 ua0 VGND 1G
-Rua1 ua1 VGND 1G
-Rua2 ua2 VGND 1G
-Rua3 ua3 VGND 1G
-Rua4 ua4 VGND 1G
-Rua5 ua5 VGND 1G
-Rua6 ua6 VGND 1G
-Rua7 ua7 VGND 1G
 Rui0 ui0 VGND 1G
 Rui1 ui1 VGND 1G
 Rui2 ui2 VGND 1G
