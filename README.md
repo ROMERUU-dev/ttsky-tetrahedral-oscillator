@@ -3,16 +3,35 @@
 
 # Tetrahedral Oscillator for Tiny Tapeout
 
-This project implements a compact SKY130 tetrahedral oscillator for the Tiny Tapeout analog flow.
+A compact SKY130 oscillator implemented as a semi-custom Tiny Tapeout analog layout using SKY130 standard cells, focused on the study of tetrahedral-style feedback, coupled CMOS inverter pairs, capacitive loading, and post-layout verification.
 
-The design is inspired by the paper **“Analysis and Design of a Tetrahedral Oscillator”** by **Richelle L. Smith** and **Thomas H. Lee**. The oscillator core is built from coupled CMOS inverter pairs, with capacitive loads added to internal nodes to study and tune oscillation behavior.
+## Overview
 
-## Online Viewers
+This repository contains the design collateral for a compact tetrahedral oscillator targeting the Tiny Tapeout SKY130 analog/custom layout flow. The project explores a non-conventional oscillator topology based on coupled CMOS inverter pairs rather than a standard odd-stage ring oscillator, using a semi-custom implementation style based on SKY130 standard cells.
 
-- [GDS layout viewer](https://romeruu-dev.github.io/ttsky-tetrahedral-oscillator/)
-- [Xschem schematic viewer](https://xschem-viewer.com/?file=https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/blob/main/xschem/tt_um_tetrahedral_oscilator_xschem_lvs.sch)
+The implementation includes schematic-level design files, Magic layout collateral, exported GDS/LEF files, SPICE netlists, simulation testbenches, and workflow documentation. The intent is to keep the project reproducible and inspectable using open-source microelectronics tools.
 
-## Project Data
+## Academic Motivation
+
+The design is motivated by the paper **“Analysis and Design of a Tetrahedral Oscillator”** by **Richelle L. Smith** and **Thomas H. Lee**. The oscillator concept is adapted here as an educational and experimental SKY130 layout exercise, with emphasis on physical implementation, parasitic-aware simulation, and observation of internal oscillator behavior.
+
+<p align="center">
+  <img src="docs/images/osc.png" alt="Theoretical tetrahedral oscillator schematic from the original paper" width="620">
+</p>
+
+The project was developed in the context of a final project for the Digital Electronics course at the Faculty of Engineering Mexicali, Universidad Autonoma de Baja California (UABC), within the Semiconductors and Microelectronics program.
+
+This project is not intended to claim a direct reproduction of the published circuit. Instead, it uses the tetrahedral oscillator idea as a basis for studying coupled feedback, inverter-pair dynamics, and layout constraints in a small open-source integrated circuit design flow.
+
+## Project Objectives
+
+- Implement a compact tetrahedral-style oscillator using a semi-custom approach with SKY130 standard-cell based layout elements.
+- Study oscillation behavior at the internal core nodes before output buffering.
+- Provide buffered observation nodes for easier probing and integration.
+- Export GDS and LEF collateral compatible with the Tiny Tapeout analog/custom layout flow.
+- Maintain a reproducible repository structure for schematic, layout, simulation, and verification review.
+
+## Project Summary
 
 | Item | Value |
 | --- | --- |
@@ -21,78 +40,70 @@ The design is inspired by the paper **“Analysis and Design of a Tetrahedral Os
 | Target | Tiny Tapeout analog/custom layout |
 | Tile size | `1x2` |
 | Design type | Analog oscillator |
+| Implementation style | Semi-custom layout using SKY130 standard cells |
 | Supply | 1.8 V core supply |
 | Clock | `0 Hz` |
 | Author | Juvenal Romero Pedraza |
 
-## How It Works
+## Design Concept
 
-The oscillator uses multiple inverter stages arranged in a tetrahedral-style feedback structure. Instead of using a conventional odd-stage ring oscillator topology, the design explores coupled inverter-pair feedback and distributed capacitive loading.
+The oscillator core is based on multiple CMOS inverter stages arranged in a tetrahedral-style feedback structure. Instead of relying on a conventional ring oscillator topology, the design uses coupled inverter-pair feedback and distributed capacitive loading to encourage oscillation.
 
-The current implementation focuses on:
+The internal core nodes are the most important signals for understanding the oscillator behavior. The buffered outputs are included to provide cleaner observation points, but they are not the source of the oscillation mechanism.
 
-- CMOS inverter-pair based oscillator core
-- Frequency adjustment through added capacitive loads
-- Buffered observation nodes for waveform readout
-- Custom physical layout inside a Tiny Tapeout analog `1x2` tile
-- Exported GDS and LEF collateral for the Tiny Tapeout flow
+## Design Methodology
 
-## How To Test
+The project was developed through a custom-layout oriented workflow:
 
-Simulate the extracted design with the provided SPICE testbenches and inspect the oscillator core and buffered output waveforms. The intended review flow is:
+- Schematic capture and netlist generation for the oscillator core.
+- Manual layout work in Magic using SKY130-compatible layout structures.
+- Addition of capacitive loading at selected internal nodes.
+- Buffering of selected oscillator nodes for output observation.
+- Export of GDS and LEF collateral.
+- Transient simulation using SPICE testbenches.
+- Comparison between oscillator core behavior and buffered output behavior.
 
-- Open the schematic with the online Xschem viewer.
-- Inspect the final layout with the GDS layout viewer.
-- Run or review the post-layout ngspice testbenches in `tb/` and `runs/results/`.
-- Compare the oscillator core waveforms against the buffered output waveforms.
+## Online Viewers
+
+- [GDS layout viewer](https://romeruu-dev.github.io/ttsky-tetrahedral-oscillator/)
+- [Xschem schematic viewer](https://xschem-viewer.com/?file=https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator/blob/main/xschem/tt_um_tetrahedral_oscilator_xschem_lvs.sch)
+
+## Verification Flow
+
+The intended verification flow is:
+
+- Review the schematic through the online Xschem viewer.
+- Inspect the final physical design through the online GDS layout viewer.
+- Run or review the transient SPICE testbenches in `tb/`.
+- Review generated simulation outputs in `runs/results/`.
+- Compare the internal oscillator core nodes against the buffered output nodes.
 
 ## Simulation Results
 
-The oscillator was checked at two observation points: directly at the internal core nodes and after the output buffer chain. The core view shows the coupled inverter-pair dynamics, while the buffered view shows the same oscillation after it has been isolated for external observation.
+The oscillator was evaluated at two observation points: directly at the internal core nodes and after the output buffer chain. This distinction is important because the oscillator core is the primary circuit under study, while the buffered outputs are observation interfaces.
 
 ### Oscillator Core
 
-![Oscillator core waveforms](docs/images/oscillator_core_waveforms_overlay_zoom.svg)
-
-The internal nodes (`x9/Y`, `x4/A`, `x9/A`, and `x8/A`) oscillate with the phase relationships expected from the tetrahedral-style feedback network. These are the most useful waveforms for understanding the behavior of the oscillator itself, before the buffer stages reshape and isolate the signals.
+The internal nodes `x9/Y`, `x4/A`, `x9/A`, and `x8/A` are used to study the behavior of the oscillator before the buffer stages. These nodes are the most relevant signals for understanding the coupled inverter-pair feedback network and its transient behavior.
 
 ### Buffered Outputs
 
-![Buffered output waveforms](docs/images/buffered_output_waveforms_overlay_zoom.svg)
-
-The buffered outputs preserve the oscillatory behavior while providing cleaner observation nodes. These signals are useful for integration and probing, but the core waveforms remain the better reference for studying the oscillator topology.
-
-## Layout Preview
-
-![Layout preview](docs/images/layout.svg)
-
-The final layout is exported as GDS/LEF and can be inspected interactively with the online GDS layout viewer. The layout collateral is kept in `gds/`, `lef/`, and `mag/`.
-
-## Tooling
-
-<p>
-  <img src="docs/images/sky130-flow-gui.svg" alt="SkyFlow logo" width="120">
-  <img src="docs/images/pxl.svg" alt="PNG-2-Layout logo" width="120">
-</p>
-
-This project also uses custom support software developed to make the analog layout workflow easier:
-
-- [SkyFlow / sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui): local GUI workflow for organizing SKY130 projects, running simulations, managing generated results, and keeping layout/simulation work in one place.
-- [PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout): utility for converting transparent PNG artwork into layout-friendly geometry that can be cleaned up and integrated into the physical design flow.
-
-SkyFlow was used to support simulation and project organization while iterating on the oscillator. PNG-2-Layout is used as supporting tooling for image-to-layout experiments and visual layout assets around the project.
-
-## Conclusions
-
-The simulation results show that the coupled inverter network can sustain oscillation and that the buffered outputs track the oscillator activity without being the primary source of the behavior. This supports the custom-layout approach: the oscillator is best treated as an analog/mixed-signal feedback structure rather than as a conventional RTL block.
+The buffered outputs provide external observation points derived from the oscillator core. They are useful for probing and integration, but they should be interpreted as buffered representations of the core activity rather than independent oscillator sources.
 
 ## Layout Strategy
 
-The oscillator core is implemented as custom physical layout using SKY130 standard cells placed manually in Magic. Because the circuit contains multiple active drivers around internal feedback nodes, this custom layout approach is more suitable than treating the block as a conventional digital RTL-to-GDS design.
+The oscillator core is implemented as a semi-custom physical layout using SKY130 standard-cell based structures placed manually in Magic. Because the circuit contains coupled feedback and multiple active devices around internal nodes, a semi-custom analog/mixed-signal layout approach is more appropriate than treating the block as a conventional RTL-to-GDS digital design.
 
-## Images
+The final layout collateral is kept in `gds/`, `lef/`, and `mag/`. The exported layout can be inspected with the online GDS viewer linked above.
 
-Image assets for documentation live in [`docs/images/`](docs/images/).
+## Supporting Tooling
+
+This project also uses custom support software developed to improve the SKY130 analog workflow:
+
+- [SkyFlow / sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui): local GUI workflow for organizing SKY130 projects, running simulations, managing generated results, and keeping layout and simulation work in one place.
+- [PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout): utility for converting transparent PNG artwork into layout-friendly geometry that can be cleaned up and integrated into a physical design flow.
+
+SkyFlow was used to support simulation and project organization while iterating on the oscillator. PNG-2-Layout is included as supporting tooling for image-to-layout experiments associated with the broader workflow.
 
 ## Repository Structure
 
@@ -104,4 +115,25 @@ Image assets for documentation live in [`docs/images/`](docs/images/).
 - `spice/`: design netlists
 - `tb/`: local SPICE testbenches
 - `runs/`: SKY130 Flow GUI outputs and simulation results
-- `docs/`: notes, generated docs, viewer links, and image assets
+- `docs/`: notes, generated documentation, and viewer links
+
+## Current Status
+
+The repository contains the current schematic, layout, exported GDS/LEF collateral, SPICE netlists, and simulation files needed to review the design. GitHub Actions are configured for Tiny Tapeout GDS and documentation checks, as shown by the workflow badges at the top of this README.
+
+This README does not claim silicon measurement results, final manufactured behavior, or a measured oscillation frequency.
+
+## Key Takeaways
+
+- The project demonstrates a compact semi-custom oscillator based on tetrahedral-style coupled inverter feedback.
+- Internal oscillator core nodes and buffered outputs are treated as separate verification points.
+- The design is documented as a reproducible university microelectronics project using open-source SKY130 tooling.
+- The physical implementation is better understood as analog/mixed-signal feedback layout rather than ordinary digital RTL.
+
+## Author
+
+Juvenal Romero Pedraza
+
+## Acknowledgment
+
+This project was developed as a final project for the Digital Electronics course at the Faculty of Engineering Mexicali, Universidad Autonoma de Baja California (UABC), in the Semiconductors and Microelectronics program. It was also developed in the context of open-source microelectronics experimentation using the SKY130 process and the Tiny Tapeout analog/custom layout flow. The oscillator concept is academically motivated by prior work on tetrahedral oscillator analysis and design.
