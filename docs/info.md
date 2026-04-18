@@ -32,6 +32,24 @@ range. A frequency near 12 MHz is practical to measure with standard university
 lab equipment such as a 50 MHz or 100 MHz oscilloscope, provided the output is
 probed with a high-impedance probe.
 
+## Tooling extensions (non-invasive)
+
+To improve observability and reproducibility without altering the validated
+layout collateral, this project documents and uses additional support tooling:
+
+- **GDS2WebGL** (`https://github.com/s-holst/GDS2WebGL`) as a browser-based GDS
+  visualizer flow for interactive inspection.
+- **png2layout** ([PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout))
+  to convert transparent PNG images into Manhattan-clean pixelated GDS shapes
+  with DRC-oriented cleanup.
+- **sky-flow** ([sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui))
+  to automate PDK and VLSI software setup,
+  create specific route recipes, run ngspice simulations, inspect waveform
+  results, and provide extra numerical/flow utilities.
+
+These tools are treated as complementary infrastructure around the project and
+not as replacements for the documented Tiny Tapeout handoff artifacts.
+
 ## External hardware
 
 No external passives or bias sources are required. Use standard 1.8 V power

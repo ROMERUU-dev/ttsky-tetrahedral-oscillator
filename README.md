@@ -47,6 +47,18 @@ At the current stage, the project focuses on:
 The oscillator core is being implemented as a custom physical design using SKY130 standard cells placed manually in Magic.  
 Because the circuit contains multiple active drivers per internal node, it is not a conventional digital logic block for standard RTL-to-GDS flows, so the custom layout approach is more suitable.
 
+## Visualization and flow tooling
+
+This repository already includes finalized GDS and documentation artifacts, and the next step is to improve usability without disturbing the verified flow.
+
+Planned/added workflow extensions:
+
+- **GDS2WebGL integration (viewer workflow):** use [GDS2WebGL](https://github.com/s-holst/GDS2WebGL) as a non-invasive visualization path for inspecting GDS in a browser.
+- **`png2layout` usage:** use [PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout) to transform transparent PNG inputs into Manhattan-clean, pixel-style GDS geometry with DRC-safe cleanup.
+- **`sky-flow` usage:** use [sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui) to simplify PDK/VLSI software setup, route generation, simulation execution (`ngspice`), waveform visualization, and auxiliary engineering utilities.
+
+These additions are intentionally documented as **support tooling** around the existing tapeout collateral, so they do not modify the validated core deliverables (`gds/`, `lef/`, `mag/`, and project docs).
+
 ## Status
 
 Current project status:
@@ -61,6 +73,8 @@ Current project status:
 - [x] GDS export
 - [x] LEF export
 - [x] Final Tiny Tapeout checks
+- [x] Post-layout ngspice validation and waveform review
+- [x] Additional visualization/flow tooling documentation
 
 ## Documentation
 
