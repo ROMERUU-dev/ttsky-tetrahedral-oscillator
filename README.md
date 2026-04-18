@@ -88,9 +88,21 @@ The oscillator was evaluated at two observation points: directly at the internal
 
 The internal nodes `x9/Y`, `x4/A`, `x9/A`, and `x8/A` are used to study the behavior of the oscillator before the buffer stages. These nodes are the most relevant signals for understanding the coupled inverter-pair feedback network and its transient behavior.
 
+<p align="center">
+  <img src="docs/images/oscillator_core_waveforms_overlay_zoom.svg" alt="Overlayed oscillator core waveforms" width="760">
+  <br>
+  <em>Overlayed transient response of selected oscillator core nodes.</em>
+</p>
+
 ### Buffered Outputs
 
 The buffered outputs provide external observation points derived from the oscillator core. They are useful for probing and integration, but they should be interpreted as buffered representations of the core activity rather than independent oscillator sources.
+
+<p align="center">
+  <img src="docs/images/buffered_output_waveforms_overlay_zoom.svg" alt="Overlayed buffered output waveforms" width="760">
+  <br>
+  <em>Overlayed transient response after the output buffer chain.</em>
+</p>
 
 ## Layout Strategy
 
@@ -98,9 +110,21 @@ The oscillator core is implemented as a semi-custom physical layout using SKY130
 
 The final layout collateral is kept in `gds/`, `lef/`, and `mag/`. The exported layout can be inspected with the online GDS viewer linked above.
 
+<p align="center">
+  <img src="docs/images/layout.svg" alt="Final layout preview" width="560">
+  <br>
+  <em>SVG preview of the exported physical layout.</em>
+</p>
+
 ## Supporting Tooling
 
 This project also uses custom support software developed to improve the SKY130 analog workflow:
+
+<p align="center">
+  <img src="docs/images/sky130-flow-gui.svg" alt="SkyFlow logo" width="96">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/images/pxl.svg" alt="PNG-2-Layout logo" width="96">
+</p>
 
 - [SkyFlow / sky130-flow-gui](https://github.com/ROMERUU-dev/sky130-flow-gui): local GUI workflow for organizing SKY130 projects, running simulations, managing generated results, and keeping layout and simulation work in one place.
 - [PNG-2-Layout](https://github.com/ROMERUU-dev/PNG-2-Layout): utility for converting transparent PNG artwork into layout-friendly geometry that can be cleaned up and integrated into a physical design flow.
