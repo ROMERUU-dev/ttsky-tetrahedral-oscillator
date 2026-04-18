@@ -7,12 +7,13 @@ A compact SKY130 oscillator implemented as a semi-custom Tiny Tapeout analog lay
 
 ## Project Team
 
-| Role | Name |
-| --- | --- |
-| Primary author | Juvenal Romero Pedraza |
-| Coauthor | Gael Gabino Diaz Ojeda |
-| Coauthor | Mario Ranferi Romero Salgado |
-| Project coordinator | Dr. Jose Luis Valtierra Sanchez de la Vega |
+Project participants:
+
+- Juvenal Romero Pedraza
+- Gael Gabino Diaz Ojeda
+- Mario Ranferi Romero Salgado
+
+Project coordinator: Dr. Jose Luis Valtierra Sanchez de la Vega
 
 ## Overview
 
@@ -54,8 +55,7 @@ This project is not intended to claim a direct reproduction of the published cir
 | Implementation style | Semi-custom layout using SKY130 standard cells |
 | Supply | 1.8 V core supply |
 | Clock | `0 Hz` |
-| Primary author | Juvenal Romero Pedraza |
-| Coauthors | Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado |
+| Project participants | Juvenal Romero Pedraza, Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado |
 | Project coordinator | Dr. Jose Luis Valtierra Sanchez de la Vega |
 
 ## Design Concept
@@ -169,10 +169,11 @@ This README does not claim silicon measurement results, final manufactured behav
 
 ## Project Team
 
-- Juvenal Romero Pedraza, primary author
-- Gael Gabino Diaz Ojeda, coauthor
-- Mario Ranferi Romero Salgado, coauthor
-- Dr. Jose Luis Valtierra Sanchez de la Vega, project coordinator
+- Juvenal Romero Pedraza
+- Gael Gabino Diaz Ojeda
+- Mario Ranferi Romero Salgado
+
+Project coordinator: Dr. Jose Luis Valtierra Sanchez de la Vega
 
 ## Acknowledgment
 
