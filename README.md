@@ -53,14 +53,14 @@ Current project status:
 
 - [x] Tiny Tapeout analog repository created
 - [x] Project metadata initialized
-- [ ] Verilog/project stub cleanup
-- [ ] Pin allocation finalization
-- [ ] Magic template initialization
-- [ ] Oscillator core placement
-- [ ] Capacitive load integration
-- [ ] GDS export
-- [ ] LEF export
-- [ ] Final Tiny Tapeout checks
+- [x] Verilog/project stub cleanup
+- [x] Pin allocation finalization
+- [x] Magic template initialization
+- [x] Oscillator core placement
+- [x] Capacitive load integration
+- [x] GDS export
+- [x] LEF export
+- [x] Final Tiny Tapeout checks
 
 ## Documentation
 
