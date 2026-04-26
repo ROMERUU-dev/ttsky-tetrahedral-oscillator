@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "Tetrahedral Oscillator"      # Project title
-  author:       "Juvenal Romero Pedraza, Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado; project coordinator: Dr. Jose Luis Valtierra Sanchez de la Vega"      # Project team
+  author:       "Juvenal Romero Pedraza, Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado."      # Project team
   discord:      "ROMERUU-dev"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Tetrahedral oscillator based on coupled CMOS inverter pairs with capacitive load tuning."      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
