@@ -163,7 +163,6 @@ This README does not claim silicon measurement results, final manufactured behav
 - Gael Gabino Diaz Ojeda
 - Mario Ranferi Romero Salgado
 
-Project coordinator: Dr. Jose Luis Valtierra Sanchez de la Vega
 
 ## Acknowledgment
 
