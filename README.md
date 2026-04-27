@@ -46,7 +46,6 @@ This project is not intended to claim a direct reproduction of the published cir
 | Supply | 1.8 V core supply |
 | Clock | `0 Hz` |
 | Project participants | Juvenal Romero Pedraza, Gael Gabino Diaz Ojeda, Mario Ranferi Romero Salgado |
-| Project coordinator | Dr. Jose Luis Valtierra Sanchez de la Vega |
 
 ## Design Concept
 
