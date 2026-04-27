@@ -158,7 +158,7 @@ This README does not claim silicon measurement results, final manufactured behav
 
 ## Project Team
 
-- Juvenal Romero Pedraza :)
+- Juvenal Romero Pedraza
 - Gael Gabino Diaz Ojeda
 - Mario Ranferi Romero Salgado
 
