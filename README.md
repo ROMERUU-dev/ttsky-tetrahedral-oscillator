@@ -37,7 +37,7 @@ This project is not intended to claim a direct reproduction of the published cir
 
 | Item | Value |
 | --- | --- |
-| Top module | `tt_um_tetrahedral_oscilator` |
+| Top module | `tt_um_tetrahedral_oscillator` |
 | Process | SKY130 |
 | Target | Tiny Tapeout analog/custom layout |
 | Tile size | `1x2` |
@@ -77,7 +77,6 @@ The repository is organized to make the design reviewable and reproducible, but 
 - The online Xschem viewer provides a quick way to inspect the schematic-level design.
 - The online GDS viewer provides a browser-based view of the exported physical layout.
 - The SPICE testbenches in `tb/` document the local transient simulation setup used during development.
-- Generated simulation collateral in `runs/results/` records the waveform data and plots used for README-level discussion.
 - The most useful comparison is between the internal oscillator core nodes and the buffered observation outputs, since the buffer chain changes how the oscillation is observed externally.
 
 ## Simulation Results
@@ -140,7 +139,6 @@ SkyFlow was used to support simulation and project organization while iterating 
 - `mag/`: Magic layout
 - `spice/`: design netlists
 - `tb/`: local SPICE testbenches
-- `runs/`: SKY130 Flow GUI outputs and simulation results
 - `docs/`: notes, generated documentation, and viewer links
 
 ## Current Status

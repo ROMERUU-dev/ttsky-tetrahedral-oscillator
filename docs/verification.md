@@ -9,7 +9,7 @@
 
 ## LVS / Extracción
 
-- LVS del núcleo analógico: `lvs/lvs.log` reporta `Circuits match correctly`.
+- La última corrida local de LVS del núcleo analógico reportó `Circuits match correctly`.
 - Extracción PEX: `env PDK_ROOT=/home/romeruu/pdk magic -dnull -noconsole -rcfile /home/romeruu/pdk/sky130A/libs.tech/magic/sky130A.magicrc extract_pex.tcl`.
 - Antena: `env PDK_ROOT=/home/romeruu/pdk magic -dnull -noconsole -rcfile /home/romeruu/pdk/sky130A/libs.tech/magic/sky130A.magicrc run_magic_antenna.tcl`.
 - El antennacheck de Magic terminó con `antennacheck finished`.
