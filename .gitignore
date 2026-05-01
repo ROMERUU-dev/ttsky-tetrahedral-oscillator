@@ -4,6 +4,8 @@
 *.vcd
 *.ext
 *.log
+*.raw
+*.dat
 runs
 tt_submission
 src/user_config.tcl

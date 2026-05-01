@@ -23,7 +23,7 @@ Power the design from `VDPWR = 1.8 V` and `VGND = 0 V`. Observe
 frequency counter input that does not overload the output drivers.
 
 Post-layout extracted simulation was run with Magic extraction and ngspice.
-The PEX testbench is in `tb/tt_um_tetrahedral-oscilator_pex_tb.spice`, and it
+The PEX testbench is in `tb/tt_um_tetrahedral_oscillator_pex_tb.spice`, and it
 saves the four output waveforms as `uo_out_0`, `uo_out_1`, `uo_out_2`, and
 `uo_out_3`.
 

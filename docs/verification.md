@@ -2,7 +2,7 @@
 
 ## Simulación
 
-- La simulación PEX se corre con `tb/tt_um_tetrahedral-oscilator_pex_tb.spice`.
+- La simulación PEX se corre con `tb/tt_um_tetrahedral_oscillator_pex_tb.spice`.
 - El netlist extraído usado por el testbench se genera con `mag/extract_pex.tcl`.
 - Las salidas guardadas para inspección son `uo_out_0`, `uo_out_1`, `uo_out_2` y `uo_out_3`.
 - Los pines de entrada no usados se amarran débilmente a `VGND` en el testbench para evitar nodos flotantes durante ngspice.
