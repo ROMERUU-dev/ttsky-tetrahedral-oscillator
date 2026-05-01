@@ -2,8 +2,7 @@ crashbackups stop
 drc off
 snap internal
 
-load tt_um_tetrahedral_oscilator -dereference
-cellname rename tt_um_tetrahedral_oscilator tt_um_tetrahedral_oscillator
+load tt_um_tetrahedral_oscillator -dereference
 select top cell
 expand
 
